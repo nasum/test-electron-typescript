@@ -1,9 +1,11 @@
 src/*.js
 src/typings
 src/definistions
+src/lib
 node_modules
 .envrc
 .envrc~
 .gitignore~
 .DS_Store
 app.zip
+bower_components
