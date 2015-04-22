@@ -21,7 +21,7 @@ declare module "ipc" {
 }
 
 declare module "crash-reporter" {
-	var crashReporter: any;
+	var crashReporter: Electron.CrashReporter;
 
 	export = crashReporter;
 }
@@ -224,5 +224,19 @@ declare module Electron {
 		send(channel: string, ...args: any[]):void;
 		sendSync(channel: string, ...args: any[]): void;
 		sendToHost(channel: string, ...args: any[]): void;
+	}
+
+	export interface CrashReporter {
+		start(options?: CrashReporterOptions): void;
+	}
+
+	export interface CrashReporterOptions {
+		productName?: string;
+		companyName?: string;
+		submitUrl?: string;
+		URL?: string;
+		autoSubmit?: boolean;
+		ignoreSystemCrashHandler?: boolean;
+		extra?: Object;
 	}
 }
