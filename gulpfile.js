@@ -2,6 +2,12 @@ var gulp = require('gulp');
 var atomshell = require('gulp-atom-shell');
 var ts = require('gulp-typescript');
 var merge = require('merge2');
+var bower = require('gulp-bower');
+
+gulp.task('bower', function() {
+  return bower()
+    .pipe(gulp.dest('src/lib/'))
+});
 
 gulp.task('typescript', function(){
   var tsResult = gulp.src(['src/ts/**/*.ts','src/typings/**/*.ts'])
