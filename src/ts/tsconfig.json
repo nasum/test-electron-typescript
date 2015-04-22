@@ -1,5 +1,5 @@
 {
-    "version": "1.4.1",
+    "version": "1.5.0",
     "compilerOptions": {
         "target": "es6",
         "module": "commonjs",
@@ -14,6 +14,7 @@
         "!./node_modules/**/*.ts"
     ],
     "files": [
+        "./definistions/electron.d.ts",
         "./main.ts"
     ]
 }

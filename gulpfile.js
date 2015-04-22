@@ -13,7 +13,7 @@ gulp.task('typescript', function(){
   var tsResult = gulp.src(['src/ts/**/*.ts','src/typings/**/*.ts'])
                      .pipe(
                        ts({
-                         target: 'ES5',
+                         target: 'es6',
                          module: 'commonjs',
                          out: 'main',
                          sourceRoot: 'src',

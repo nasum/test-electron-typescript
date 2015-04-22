@@ -29,6 +29,10 @@ class Main{
       mainWindow.on('closed', function() {
         mainWindow = null;
       });
+
+      ipc.on("hogehoge",function(){
+
+      });
     });
   }
 }
