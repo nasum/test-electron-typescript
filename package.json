@@ -1,0 +1,12 @@
+{
+  "name": "atomtest",
+  "version": "0.1.0",
+  "main": "src/main.js",
+  "devDependencies": {
+    "gulp": "~3.8.11",
+    "gulp-atom-shell": "~0.6.0",
+    "gulp-typescript": "~2.6",
+    "gulp-watch": "^4.2.4",
+    "merge2": "~0.3.4"
+  }
+}

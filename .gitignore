@@ -1,0 +1,9 @@
+src/*.js
+src/typings
+src/definistions
+node_modules
+.envrc
+.envrc~
+.gitignore~
+.DS_Store
+app.zip
