@@ -1,5 +1,5 @@
-/// <reference path="definistions/electron.d.ts" />
-/// <reference path="../typings/node/node.d.ts" />
+/// <reference path="typings/electron/electron.d.ts" />
+/// <reference path="typings/node/node.d.ts" />
 
 import app = require('app');
 import ipc = require('ipc');

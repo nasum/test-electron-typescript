@@ -1,6 +1,6 @@
 //reference：https://gist.github.com/anurse/3fe1f38c9cc0ea927c4f
 
-/// <references src="../../typings/node/node.d.ts" />
+/// <references src="../node/node.d.ts" />
 
 declare module "app" {
 	var app: Electron.App;

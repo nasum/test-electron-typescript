@@ -10,10 +10,10 @@ gulp.task('bower', function() {
 });
 
 gulp.task('typescript', function(){
-  var tsResult = gulp.src(['src/ts/**/*.ts','src/typings/**/*.ts'])
+  var tsResult = gulp.src(['src/ts/**/*.ts'])
                      .pipe(
                        ts({
-                         target: 'es6',
+                         target: 'es5',
                          module: 'commonjs',
                          out: 'main',
                          sourceRoot: 'src',
@@ -22,7 +22,7 @@ gulp.task('typescript', function(){
                        })
                      );
   return merge([
-    tsResult.dts.pipe(gulp.dest('src/definistions')),
+    tsResult.dts.pipe(gulp.dest('src/typings')),
     tsResult.js.pipe(gulp.dest('src'))
   ]);
 });
