@@ -1,5 +1,6 @@
 var gulp = require('gulp');
-var atomshell = require('gulp-atom-shell');
+var electron = require('gulp-electron');
+var packageJson = require('./package.json');
 var ts = require('gulp-typescript');
 var merge = require('merge2');
 var bower = require('gulp-bower');
@@ -29,12 +30,17 @@ gulp.task('typescript', function(){
 
 gulp.task('build', function(){
   return gulp.src('./**')
-      .pipe(atomshell({
-        version: '0.22.3',
-        arc: 'x64',
-        platform: 'darwin' //Macならdarwin linixならlinux windowsなら win32
+      .pipe(electron({
+		  src: './src',
+		  packageJson: packageJson,
+		      release: './release',
+		      cache: './cache',
+		      version: 'v0.24.0',
+		      rebuild: false,
+		      platforms: ['win32-ia32','darwin-x64']
+		      
       }))
-      .pipe(atomshell.zfsdest('app.zip'));
+      .pipe(gulp.dest(""));
 });
 
 gulp.task('watch', function(){

@@ -4,8 +4,8 @@
   "main": "src/main.js",
   "devDependencies": {
     "gulp": "~3.8.11",
-    "gulp-atom-shell": "~0.6.0",
     "gulp-bower": "0.0.10",
+    "gulp-electron": "0.0.1",
     "gulp-typescript": "~2.6",
     "gulp-watch": "^4.2.4",
     "merge2": "~0.3.4"

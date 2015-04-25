@@ -9,3 +9,5 @@ node_modules
 .DS_Store
 app.zip
 bower_components
+cache
+release
