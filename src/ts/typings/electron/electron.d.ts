@@ -26,6 +26,12 @@ declare module "crash-reporter" {
 	export = crashReporter;
 }
 
+declare module "dialog" {
+	var dialog: Electron.Dialog;
+
+	export = dialog;
+}
+
 declare module Electron {
 	class EventEmitter implements NodeJS.EventEmitter {
 		static listenerCount(emitter: EventEmitter, event: string): number;
@@ -238,5 +244,38 @@ declare module Electron {
 		autoSubmit?: boolean;
 		ignoreSystemCrashHandler?: boolean;
 		extra?: Object;
+	}
+
+	export interface Dialog {
+		showOpenDialog(browserWindow?:BrowserWindow,options?:showOpenDialogObject,callback?:Function):string[];
+		showSaveDialog(browserWindow?:BrowserWindow,options?:showSaveDialogObject,callback?:Function):string;
+		showMessageBox(browserWindow?:BrowserWindow,options?:showMessageBoxObject,callback?:Function):number;
+		showErrorBox(title:string,content:string):void;
+	}
+
+	export interface showOpenDialogObject {
+		title?: string;
+		defaultPath?: string;
+		filters?: Object[];
+		properties?: Object[];
+	}
+
+	export interface showSaveDialogObject {
+		title?: string;
+		defaultPath?: string;
+		filters?: Object[];
+	}
+
+	export interface showMessageBoxObject {
+		type?: string;
+		buttons?:string[];
+		title?:string;
+		message?:string;
+		detail?:String;
+		icon?:NativeImage;
+	}
+
+	export interface NativeImage {
+
 	}
 }
