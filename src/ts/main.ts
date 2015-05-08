@@ -5,6 +5,7 @@ import app = require('app');
 import ipc = require('ipc');
 import BrowserWindow = require('browser-window');
 import crashReporter = require('crash-reporter');
+import dialog = require('dialog');
 
 class Main{
   constructor(){
@@ -27,11 +28,14 @@ class Main{
       subWindow.loadUrl('file://' + __dirname + '/sub.html');
 
       mainWindow.on('closed', function() {
+        dialog.showMessageBox(mainWindow,{
+          type: 'info',
+          buttons: ['hoge','huga'],
+          title: 'hogehoge',
+          message: 'hogehoge',
+          detail: 'hogehogehugahuga'
+        });
         mainWindow = null;
-      });
-
-      ipc.on("hogehoge",function(){
-
       });
     });
   }
